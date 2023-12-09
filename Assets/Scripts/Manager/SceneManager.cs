@@ -4,7 +4,12 @@ using UnityEngine;
 
 public partial class GameManager
 {
-    
+    string currentScene;
+    string[] Scenes;
+    void LoadNextScene()
+    {
+        
+    }
 
 
 }
