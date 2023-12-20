@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ST_PuzzleDisplay : MonoBehaviour 
 {
+	public GameManager GameManager;
+
 	// this puzzle texture.
 	public Texture PuzzleImage;
 
@@ -37,8 +39,12 @@ public class ST_PuzzleDisplay : MonoBehaviour
 	// has the puzzle been completed?
 	public bool Complete = false;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    private void Awake()
+    {
+		GameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+    void Start () 
 	{
 		// create the games puzzle tiles from the provided image.
 		CreatePuzzleTiles();
@@ -233,6 +239,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		if(Complete)
 		{
 			Debug.Log("Puzzle Complete!");
+			GameManager.PuzzleClear();
 		}
 
 		yield return null;
