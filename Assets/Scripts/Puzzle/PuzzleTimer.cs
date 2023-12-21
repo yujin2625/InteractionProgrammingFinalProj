@@ -16,7 +16,7 @@ public class PuzzleTimer : MonoBehaviour
     {
         TimerSlider.value = time/timer;
         time -= Time.deltaTime;
-        if(time == 0)
+        if(time <= 0)
         {
             GameOver.SetActive(true);
         }
