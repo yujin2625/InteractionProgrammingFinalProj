@@ -96,23 +96,23 @@ public class StoryPlayer : MonoBehaviour
         storys[day].patients[conv / 2].patient = storys[day].select_Texts[conv / 2].patient2;
         AnswerPanel.SetActive(false);
         ShowText(day, conv);
-        GameManager.PuzzleGage.value += 0.05f;
+        //GameManager.PuzzleGage.value += 0.05f;
 
     }
 }
 
 [Serializable]
-public class Story
+public class Story                      // 회차별 스토리
 {
-    public bool[] select;
-    public Patient_Text[] patients;
-    public Doctor_Text[] doctors;
-    public Select_Text[] select_Texts;
+    public bool[] select;               // 선택지 유무
+    public Patient_Text[] patients;     // 환자 대화
+    public Doctor_Text[] doctors;       // 의사 대화
+    public Select_Text[] select_Texts;  // 선택지
 }
 [Serializable]
 public class Patient_Text
 {
-    public string patient;
+    public string patient;  
 }
 [Serializable]
 public class Doctor_Text
@@ -122,10 +122,10 @@ public class Doctor_Text
 [Serializable]
 public class Select_Text
 {
-    public string select1;
-    public string select2;
-    public string doctor1;
+    public string select1;          // 보여지는 선택지
+    public string select2;          
+    public string doctor1;          // 의사 선택지
     public string doctor2;
-    public string patient1;
+    public string patient1;         // 선택지별 환자 결과
     public string patient2;
 }

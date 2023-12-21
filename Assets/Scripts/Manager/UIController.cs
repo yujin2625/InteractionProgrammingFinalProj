@@ -9,7 +9,7 @@ public class UIController : MonoBehaviour
     {
         DontDestroyOnLoad(SoundEffect);
         DontDestroyOnLoad(BackgroundMusic);
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameSceneDay2");
     }
     public void SetAudioSource(AudioClip _audioClip)
     {
