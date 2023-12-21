@@ -13,6 +13,7 @@ public class StoryPlayer : MonoBehaviour
     public TMP_Text PatientText;
     public TMP_Text Answer1, Answer2;
     public GameObject AnswerPanel;
+    public AudioClip puzzleSound;
 
     public Story[] storys;
 
@@ -39,6 +40,7 @@ public class StoryPlayer : MonoBehaviour
     {
         if (conv == storys[day].select.Length)
         {
+            GameManager.PlayBackgroundMusic(puzzleSound);
             SceneManager.LoadScene("PuzzleScene");
             //    day++;
             //    conv = 0;
